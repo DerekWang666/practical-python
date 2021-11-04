@@ -1,9 +1,11 @@
 # pcost.py
 #
 # Exercise 1.27
-list = []
+total_cost = 0.0
 with open('Data/portfolio.csv', 'rt') as f:
+  header = next(f)
   for line in f:
-    list.append(line)
-    print(list)
+    row = line.split(',')
+    total_cost += float(row[1])*float(row[2])
+    print(total_cost)
 
